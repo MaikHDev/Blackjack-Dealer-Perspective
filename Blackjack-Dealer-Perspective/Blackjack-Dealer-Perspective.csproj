@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <RootNamespace>Blackjack_Dealer_Perspective</RootNamespace>
     <Nullable>enable</Nullable>
@@ -9,8 +9,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="classes\" />
-  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="rmdir &quot;$(TargetDir)playing-cards-images\&quot; /S" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY &quot;$(SolutionDir)Blackjack-Dealer-Perspective\playing-cards-images&quot; &quot;$(TargetDir)playing-cards-images\&quot; /Q /S /Y" />
+  </Target>
 
 </Project>
