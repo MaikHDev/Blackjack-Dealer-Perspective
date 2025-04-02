@@ -12,6 +12,9 @@ namespace Blackjack_Dealer_Perspective.classes
 
         private Nullable<int> bet = null;
 
+        // Imagebox list --
+        public List<PictureBox> HandImgBox = new List<PictureBox>();
+
         public int? Bet
         {
             get { return bet.GetValueOrDefault(); }
