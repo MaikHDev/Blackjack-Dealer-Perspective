@@ -58,10 +58,20 @@ namespace Blackjack_Dealer_Perspective.classes
                 }
             }
         }
-        public int Value { get; private set; }
+        private readonly int Value;
         public Image Img { get; private set; }
 
-        private string imgDirectory;
+        private readonly string imgDirectory;
+
+        public int? GetValue()
+        {
+            if (Orientation == Orientation.DOWN)
+            {
+                return null;
+            }
+
+            return Value;
+        }
 
         public Card(Ranks rank, Suits suit)
         {
