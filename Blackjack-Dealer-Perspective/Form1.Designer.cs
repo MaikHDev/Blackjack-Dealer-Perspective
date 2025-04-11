@@ -26,15 +26,14 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             SuspendLayout();
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1167, 642);
+            ClientSize = new Size(1218, 736);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);

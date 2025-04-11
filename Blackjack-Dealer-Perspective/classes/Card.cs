@@ -39,7 +39,7 @@ namespace Blackjack_Dealer_Perspective.classes
     {
         public Suits Suit { get; private set; }
         public Ranks Rank { get; private set; }
-        private Orientation orientation = Orientation.DOWN;
+        private Orientation orientation;
         public Orientation Orientation 
         {
             get => orientation; 
@@ -50,16 +50,19 @@ namespace Blackjack_Dealer_Perspective.classes
                     case Orientation.UP:
                         orientation = Orientation.UP;
                         Img = Image.FromFile($"{imgDirectory}{ToLowerCase(Rank)}_of_{ToLowerCase(Suit)}.png");
+                        PictureBox.Image = Img;
                         break;
                     case Orientation.DOWN:
                         orientation = Orientation.DOWN;
                         Img = Image.FromFile(imgDirectory + "faced_down.png");
+                        PictureBox.Image = Img;
                         break;
                 }
             }
         }
         private readonly int Value;
-        public Image Img { get; private set; }
+        public Image? Img { get; private set; }
+        public PictureBox PictureBox { get; private set; }
 
         private readonly string imgDirectory;
 
@@ -73,13 +76,15 @@ namespace Blackjack_Dealer_Perspective.classes
             return Value;
         }
 
-        public Card(Ranks rank, Suits suit)
+        public Card(Ranks rank, Suits suit, Orientation orientation = Orientation.DOWN)
         {
             this.Suit = suit;
             this.Rank = rank;
 
-            imgDirectory = Directory.GetCurrentDirectory() + @"\playing-cards-images\";
-            Img = Image.FromFile(imgDirectory + $"{ToLowerCase(rank)}_of_{ToLowerCase(suit)}.png");
+            this.imgDirectory = Directory.GetCurrentDirectory() + @"\playing-cards-images\";
+            this.PictureBox = new PictureBox();
+
+            this.Orientation = orientation;
 
             switch (rank)
             {
