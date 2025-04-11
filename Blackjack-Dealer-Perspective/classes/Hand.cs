@@ -87,7 +87,7 @@ namespace Blackjack_Dealer_Perspective.classes
 
             this.bet = this.bet * 2;
             DoubledDown = true;
-            stood = true;
+            HasStood = true;
             return true;
         }
         public bool Split() {
