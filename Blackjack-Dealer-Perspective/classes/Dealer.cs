@@ -43,7 +43,7 @@ namespace Blackjack_Dealer_Perspective.classes
         }
 
         public void DealCard(Shoe shoe, Hand hand, Orientation orientation = Orientation.UP) {
-            hand.AddCardToHand(DrawCard(shoe, orientation));
+            hand.Cards.Add(DrawCard(shoe, orientation));
         }
 
         public void ClearHands(List<Hand> allPlayerHands) {
@@ -53,7 +53,7 @@ namespace Blackjack_Dealer_Perspective.classes
             hands.Remove(hand);
         }
 
-        public Card DrawCard(Shoe shoe, Orientation orientation = Orientation.UP) {
+        public Card DrawCard(Shoe shoe, Orientation orientation = Orientation.DOWN) {
             var card = shoe.shoe[0];
             shoe.shoe.RemoveAt(0);
             card.Orientation = orientation;

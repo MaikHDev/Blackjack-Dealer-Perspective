@@ -12,8 +12,7 @@ namespace Blackjack_Dealer_Perspective.classes
 
         private Nullable<int> bet = null;
 
-        // Imagebox list --
-        public List<PictureBox> HandImgBox = new List<PictureBox>();
+        public List<PictureBox> HandPictureBoxList { get; private set; }
 
         public int? Bet {
             get { return bet.GetValueOrDefault(); }
@@ -37,6 +36,11 @@ namespace Blackjack_Dealer_Perspective.classes
                 }
                 stood = value;
             }
+        }
+
+        public Hand()
+        {
+            HandPictureBoxList = new List<PictureBox>();
         }
 
         public int? GetHandValue() {
@@ -98,10 +102,6 @@ namespace Blackjack_Dealer_Perspective.classes
 
             Console.WriteLine("Not possible to split this hand!");
             return false;
-        }
-
-        public void AddCardToHand(Card card) {
-            Cards.Add(card);
         }
     }
 }
