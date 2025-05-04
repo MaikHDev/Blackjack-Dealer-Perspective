@@ -20,7 +20,7 @@ namespace Blackjack_Dealer_Perspective.classes
         public readonly bool StandOnSoft = true;
 
         // "Non configureable" -> 
-        public readonly int MaxPlayerAmount = 8;
+        public readonly int MaxPlayerAmount = 6;
         public readonly int DealerStandAmount = 17;
 
         public static HouseRules GetInstance(int playerAmount = 4, int maxHandSize = 8, int minBet = 10, int shoeSize = 8, bool standOnSoft = true) {

@@ -9,7 +9,9 @@ namespace Blackjack_Dealer_Perspective.classes
 {
     internal class Dealer : CardHolder
     {
-        private Dealer(string name) : base(name) { }
+        private Dealer(string name) : base(name) {
+            Hand = new Hand();
+        }
 
         private static Dealer _instance;
 

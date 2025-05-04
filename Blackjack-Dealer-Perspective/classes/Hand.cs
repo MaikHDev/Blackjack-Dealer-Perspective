@@ -38,9 +38,32 @@ namespace Blackjack_Dealer_Perspective.classes
             }
         }
 
-        public Hand()
-        {
+        public Hand() {
             HandPictureBoxList = new List<PictureBox>();
+        }
+
+        public void DrawHandBox(Point location, Size size) {
+            int count = 0;
+            int x = location.X;
+            int y = location.Y;
+            foreach (Card card in Cards)
+            {
+                if (count % 5 == 0)
+                {
+                    x = location.X;
+                    x += (card.PictureBox.Width / 100) * 90;
+                }
+                else
+                {
+
+                }
+
+                card.PictureBox.Size = size;
+                card.PictureBox.TabIndex = 0;
+                card.PictureBox.TabStop = false;
+                card.PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                count++;
+            }
         }
 
         public int? GetHandValue() {

@@ -76,7 +76,8 @@ namespace Blackjack_Dealer_Perspective.classes
             return Value;
         }
 
-        public Card(Ranks rank, Suits suit, Orientation orientation = Orientation.DOWN)
+
+        public Card(Ranks rank, Suits suit, Orientation orientation = Orientation.DOWN )
         {
             this.Suit = suit;
             this.Rank = rank;
